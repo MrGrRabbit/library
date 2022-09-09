@@ -34,6 +34,7 @@ const createBook = async (book, author) => {
 
 const findAllBooks = async () => {
     const result = await Books.findAll({ attributes: ['namebook'], raw: true });
+    console.log('Get All Books...')
     console.log(result);
     return result;
 }

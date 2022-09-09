@@ -1,28 +1,17 @@
 const { findAllBooks, createBook } = require('./Book.model');
 
-class Book {
-    getBooks = (request, response) => {
-        console.log('Book output...')
-        if (request.path === '/output') {
-            findAllBooks();
-        }
-        response.send(`
-            <h2>Вывод книг</h2>
-            <li>  <a href='/'>/ - главная </a> </li>
-        `);
-    }
-    addBook = (request, response) => {
-        console.log('Book add...');
-        const book = request.query.book;
-        const author = request.query.author;
-        if (request.path === '/add') {
-            createBook(book, author);
-            console.log(request.path)
-        }
-        response.send(`
-            <h2> Добавление книги </h2> ${book} - ${author}
-            <li> <a href='/output'>/output - получить все книги </a> </li> 
-        `);
-    }
+exports.addBook = (request, response) => {
+    createBook(request.query.book, request.query.author);
+    response.send(`
+    <h3>Добавление книги</h3>
+    <li>  <a href='/'>/ - главная </a> </li>
+    `);
 }
-module.exports = new Book();
+
+exports.getBook = (request, response) => {
+    findAllBooks();
+    response.send(`
+        <h3>Получение книг</h3>
+        <li>  <a href='/'>/ - главная </a> </li>
+    `, );
+}
