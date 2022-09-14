@@ -1,5 +1,11 @@
+# Dependency directories
+
 /node_modules/*
-config.js
-package-lock.json
-package.json
+
+# Prettier config
+
 *.prettierrc
+
+# dotenv environment variables file
+
+.env
