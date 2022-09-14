@@ -1,11 +1,7 @@
 const { sequelize } = require('./Client/db.client');
+
 const app = require('./Router/index.router');
-const {Books, findAllBooks, createBook} = require('./Components/Book/Book.model');
-//const {findAllBooks} = require('./Books/FindBook.service');
 const PORT = 3000;
-
-//const app = express();
-
 
 // checking the connection to the database
 async function assertDatabaseConnection() {

@@ -7,7 +7,7 @@ app.get('/getBook', bookController.getBook);
 app.get('/addBook', bookController.addBook);
 
 app.get('/', (request, response) => {
-    // В будущем страницы из view
+
     response.send(`
         <h2> Welcome to library </h2>
         <li> <a href='/getBook'>/getBook - получить все книги </a> </li> 

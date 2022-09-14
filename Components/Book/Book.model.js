@@ -1,4 +1,3 @@
-// search method
 const DataTypes = require('sequelize');
 const { sequelize } = require('../../Client/db.client');
 
@@ -22,26 +21,7 @@ const Books = sequelize.define(
     }
 );
 
-const createBook = async (book, author) => {
-    const result = await Books.create({
-        namebook: book,
-        nameauthorbook: author
-    });
-    console.log(result);
-    return result;
-}
-
-
-const findAllBooks = async () => {
-    const result = await Books.findAll({ attributes: ['namebook'], raw: true });
-    console.log('Get All Books...')
-    console.log(result);
-    return result;
-}
-
 module.exports = {
-    Books,
-    findAllBooks,
-    createBook
+    Books
 }
 //Почему-то не получилось через init()
