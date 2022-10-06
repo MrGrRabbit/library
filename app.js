@@ -17,7 +17,7 @@ async function assertDatabaseConnection() {
 async function init() {
     await assertDatabaseConnection();
     app.listen(PORT, () => {
-        console.log('port: ' + PORT);
+        console.log('port: ' + PORT, `| LINK: http://localhost:${PORT}`);
     });
 }
 

@@ -17,6 +17,10 @@ const Books = sequelize.define(
         nameauthorbook: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        idphotobook: {
+            type: DataTypes.STRING,
+            allowNull: false,
         }
     }
 );
